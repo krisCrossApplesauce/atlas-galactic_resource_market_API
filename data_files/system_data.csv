@@ -1,5 +1,5 @@
-id,sun,planets,resources
-,Sol,,
-,Canopus,,
-,Goblly,,
-,Kepler-90,,
+id,sun
+1,Sol
+2,Kepler-90
+3,Canopus
+4,Goblly
