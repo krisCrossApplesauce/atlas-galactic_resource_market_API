@@ -22,8 +22,8 @@ CREATE TABLE "planets_resources" (
   PRIMARY KEY ("planet_id", "resource_id")
 );
 
-CREATE TABLE "systems_resources" (
+CREATE TABLE "systems_planets" (
   "system_id" INTEGER REFERENCES "systems" ("id"),
-  "resource_id" INTEGER REFERENCES "resources" ("id"),
-  PRIMARY KEY ("system_id", "resource_id")
+  "planet_id" INTEGER REFERENCES "planets" ("id"),
+  PRIMARY KEY ("system_id", "planet_id")
 );
