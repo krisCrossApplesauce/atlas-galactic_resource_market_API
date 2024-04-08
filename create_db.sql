@@ -8,7 +8,7 @@ CREATE TABLE "planets" (
 
 CREATE TABLE "systems" (
   "id" integer PRIMARY KEY,
-  "name" varchar,
+  "sun" varchar,
   "planets" varchar,
   "resources" varchar
 );
