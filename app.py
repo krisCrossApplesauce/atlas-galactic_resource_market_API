@@ -55,5 +55,21 @@ def get_planets_by_resource(resource_type):
         return jsonify({'message': 'No planets found with the specified resource'}), 404
     return jsonify(planets)
 
+@app.route('/<system_name>/planets/<resource_type>', methods=['GET'])
+def get_planets_in_system_by_resource(system_name, resource_type):
+    cur.execute("""
+        SELECT planets.name 
+        FROM planets 
+        JOIN systems ON planets.system_id = systems.id
+        JOIN planet_resources ON planets.id = planet_resources.planet_id 
+        JOIN resources ON planet_resources.resource_id = resources.id 
+        WHERE LOWER(systems.name) = LOWER(%s) 
+        AND LOWER(resources.type) = LOWER(%s);
+    """, (system_name, resource_type,))
+    planets = cur.fetchall()
+    if not planets:
+        return jsonify({'message': 'No planets found with the specified resource'}), 404
+    return jsonify(planets)
+
 if __name__ == '__main__':
     app.run(debug=True)
