@@ -38,6 +38,7 @@ with open('planet_resource_data.csv', newline='') as csvfile:
         resource_id = int(row['resource_id'])
         resource_ids.add(resource_id)
 
+# Double checks resources referenced are in the resources table, avoids multiple
 for resource_id in resource_ids:
     cur.execute("SELECT id FROM resources WHERE id = %s", (resource_id,))
     if not cur.fetchone():

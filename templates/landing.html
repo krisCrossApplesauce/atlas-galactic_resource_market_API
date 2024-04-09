@@ -17,30 +17,13 @@
             position: relative;
         }
 
-        .ship {
-            position: absolute;
-            top: 50%;
-            left: -100px; /* Start the ship off-screen */
-            transform: translateY(-50%);
-            animation: fly 10s linear infinite;
-        }
-
-        @keyframes fly {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(110%);
-            }
-        }
-
         .container {
-            z-index: 1; /* Ensure text is above the ship */
+            z-index: 1;
         }
 
         h1, p {
             color: #fff;
-            font-size: 3rem; /* Adjust the font size here */
+            font-size: 3rem;
         }
     </style>
 </head>
@@ -55,6 +38,5 @@
             </div>
         </div>
     </div>
-    <img src="https://cdn.pixabay.com/photo/2013/07/12/18/39/space-153716_960_720.png" alt="Flying Ship" class="ship">
 </body>
 </html>
