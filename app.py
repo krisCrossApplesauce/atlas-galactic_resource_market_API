@@ -19,7 +19,7 @@ def landing_page():
 
 @app.route('/planets')
 def get_planets():
-    cur.execute("SELECT name FROM planets")
+    cur.execute("SELECT planets.name, systems.name FROM planets, systems WHERE systems.id=planets.system_id;")
     planets = cur.fetchall()
     return jsonify(planets)
 
