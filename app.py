@@ -55,6 +55,19 @@ def get_planets_by_resource(resource_type):
         return jsonify({'message': 'No planets found with the specified resource'}), 404
     return jsonify(planets)
 
+@app.route('/<system_name>/planets', methods=['GET'])
+def get_planets_in_system(system_name):
+    cur.execute("""
+        SELECT planets.name 
+        FROM planets 
+        JOIN systems ON planets.system_id = systems.id
+        WHERE LOWER(systems.name) = LOWER(%s);
+    """, (system_name,))
+    planets = cur.fetchall()
+    if not planets:
+        return jsonify({'message': 'No planets found within the specified system'}), 404
+    return jsonify(planets)
+
 @app.route('/<system_name>/planets/<resource_type>', methods=['GET'])
 def get_planets_in_system_by_resource(system_name, resource_type):
     cur.execute("""
@@ -68,8 +81,23 @@ def get_planets_in_system_by_resource(system_name, resource_type):
     """, (system_name, resource_type,))
     planets = cur.fetchall()
     if not planets:
-        return jsonify({'message': 'No planets found with the specified resource'}), 404
+        return jsonify({'message': 'No planets found with the specified resource within the specified system'}), 404
     return jsonify(planets)
+
+@app.route('/<planet_name>/resources', methods=['GET'])
+def get_resources_on_planet(planet_name):
+    cur.execute("""
+        SELECT resources.type 
+        FROM resources 
+        JOIN planet_resources ON resources.id = planet_resources.resource_id 
+        JOIN planets ON planet_resources.planet_id = planets.id 
+        WHERE LOWER(planets.name) = LOWER(%s);
+    """, (planet_name,))
+    resources = cur.fetchall()
+    if not resources:
+        return jsonify({'message': 'No resources found on the specified planet'}), 404
+    return jsonify(resources)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
