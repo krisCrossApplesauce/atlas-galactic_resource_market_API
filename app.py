@@ -37,7 +37,7 @@ def get_resources():
 
 @app.route('/planet_resources')
 def get_planet_resources():
-    cur.execute("SELECT * FROM planet_resources")
+    cur.execute("SELECT planets.name, resources.type FROM planets, resources WHERE EXISTS (SELECT * FROM planet_resources WHERE planets.id=planet_resources.planet_id AND resources.id=planet_resources.resource_id );")
     planet_resources = cur.fetchall()
     return jsonify(planet_resources)
 
