@@ -1,0 +1,4 @@
+DROP TABLE planet_resources CASCADE;
+DROP TABLE planets CASCADE;
+DROP TABLE resources CASCADE;
+DROP TABLE systems CASCADE;

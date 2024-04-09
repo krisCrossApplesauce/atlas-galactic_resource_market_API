@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Galactic Resource Market</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ship {
+            position: absolute;
+            top: 50%;
+            left: -100px; /* Start the ship off-screen */
+            transform: translateY(-50%);
+            animation: fly 10s linear infinite;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(110%);
+            }
+        }
+
+        .container {
+            z-index: 1; /* Ensure text is above the ship */
+        }
+
+        h1, p {
+            color: #fff;
+            font-size: 3rem; /* Adjust the font size here */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h1>Welcome to the Galactic Resource Market</h1>
+                    <p>Explore the vast universe and discover valuable resources!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="https://cdn.pixabay.com/photo/2013/07/12/18/39/space-153716_960_720.png" alt="Flying Ship" class="ship">
+</body>
+</html>
