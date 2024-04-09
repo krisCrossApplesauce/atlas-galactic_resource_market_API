@@ -1,6 +1,6 @@
 # Atlas Galactic Resource Market API
 
-This API serves as the backend for the Atlas Galactic Resource Market, providing endpoints for managing resources, transactions, and market data.
+This API serves as the backend for the Atlas Galactic Resource Market
 
 ## Technologies Used
 
