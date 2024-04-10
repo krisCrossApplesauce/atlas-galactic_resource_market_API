@@ -9,54 +9,36 @@ id,name,system
 8,Uranus,1
 9,Neptune,1
 10,Pluto,1
-11,Kepler-90b,2
-12,Kepler-90c,2
-13,Kepler-90i,2
-14,Kepler-90d,2
-15,Kepler-90e,2
-16,Kepler-90f,2
-17,Kepler-90g,2
-18,Kepler-90h,2
-19,Seban,3
-20,Menaris,3
-21,Arrakis,3
-22,Extaris,3
-23,Ven,3
-24,Revona,3
-25,Dyy,4
-26,Gük,4
-27,Terky,4
-28,Yahm,4
-29,Gobgob,4
-30,TRAPPIST-1b,5
-31,TRAPPIST-1c,5
-32,TRAPPIST-1d,5
-33,TRAPPIST-1e,5
-34,TRAPPIST-1f,5
-35,TRAPPIST-1g,5
-36,TRAPPIST-1h,5
-37,Gliese 581b,6
-38,Gliese 581c,6
-39,Gliese 581d,6
-40,Gliese 581e,6
-41,Gliese 581g,6
-42,Kepler-22b,7
-43,Kepler-22c,7
-44,Kepler-22d,7
-45,HD 10180b,8
-46,HD 10180c,8
-47,HD 10180d,8
-48,HD 10180e,8
-49,HD 10180f,8
-50,HD 10180g,8
-51,HD 10180h,8
-52,HD 10180i,8
-53,HD 10180j,8
-54,Gliese 436b,9
-55,Gliese 436c,9
-56,Gliese 436d,9
-57,Kepler-186b,10
-58,Kepler-186c,10
-59,Kepler-186d,10
-60,Kepler-186e,10
-61,Kepler-186f,10
+11,Hourglass Twins,2
+12,Timber Hearth,2
+13,Brittle Hollow,2
+14,Giants Deep,2
+15,Dark Bramble,2
+16,Dyy,3
+17,Gük,3
+18,Terky,3
+19,Gobgob,3
+20,Yahm,3
+21,Proxima Centauri d,4
+22,Proxima Centauri b,4
+23,Proxima Centauri c,4
+24,Janssen,5
+25,Galileo,5
+26,Brahe,5
+27,Harriot,5
+28,Lipperhey,5
+29,WASP-76b,6
+30,TRAPPIST-1b,7
+31,TRAPPIST-1c,7
+32,TRAPPIST-1d,7
+33,TRAPPIST-1e,7
+34,TRAPPIST-1f,7
+35,TRAPPIST-1g,7
+36,TRAPPIST-1h,7
+37,Kepler-22b,8
+38,Awohali,9
+39,HD 189733b,10
+40,HD 189733c,10
+41,TOI-849b,11
+42,TrES-2b,12
+43,KELT-9b,13
