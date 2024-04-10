@@ -19,11 +19,28 @@
 
         .container {
             z-index: 1;
+            position: relative; /* Establishes a new positioning context */
+        }
+
+        .text-container {
+            position: relative; /* Allows for absolute positioning of child elements */
+            z-index: 2; /* Ensures the text is above the image */
         }
 
         h1, p {
             color: #fff;
             font-size: 3rem;
+        }
+
+        .rocket-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Places the image behind the text */
+            width: 250%; /* Adjust as needed */
+            height: auto; /* Adjust as needed */
+            object-fit: cover;
         }
     </style>
 </head>
@@ -31,11 +48,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="text-center">
+                <div class="text-container">
                     <h1>Welcome to the Galactic Resource Market</h1>
                     <p>Explore the vast universe and discover valuable resources!</p>
-                    <img src="../assets/imgs/pixel-rocket.png" alt="pixel-rocket" style="object-fit: cover; max-width: 500%; max-height: 500%;">
                 </div>
+                <img class="rocket-image" src="../assets/imgs/pixel-rocket.png" alt="pixel-rocket">
             </div>
         </div>
     </div>
