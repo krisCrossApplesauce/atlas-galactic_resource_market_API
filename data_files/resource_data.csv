@@ -1,32 +1,44 @@
 id,type
 1,Iron
 2,Water
-3,Gold
-4,Helium
-5,Titanium
-6,Hydrocarbons
-7,Rare Earth Elements
-8,Silicon
-9,Platinum
-10,Diamonds
-11,Methane
-12,Oxygen
+3,Helium
+4,Hydrogen
+5,Oxygen
+6,Nickel
+7,Nitrogen
+8,Methane
+9,Ammonia
+10,Organic life
+11,Carbon dioxide
+12,Lithium
 13,Carbon
-14,Nitrogen
-15,Aluminum
-16,Copper
-17,Silver
-18,Nickel
-19,Lithium
-20,Uranium
-21,Unobtainium
-22,Life
-23,GoblyGoid
-24,Hydrogen 
+14,Magnesium
+15,Rare Earth Materials
+16,Silicon
+17,Sodium
+18,Vanadium oxide
+19,Aluminum
+20,Potassium
+21,Uranium
+22,Calcium
+23,Platinum
+24,Silicate
 25,Stoney-Iron
-26,Keratin
-27,Magnesium
-28,Plasma
-29,Hemoglobin
-30,Carbon Dioxide
-31,Sodium
+26,Carbon monoxide
+27,Diamond
+28,Gobllygoid
+29,Gold
+30,Hydrocarbons
+31,Iron oxide
+32,Silver
+33,Titanium
+34,Carbon oxide
+35,Copper
+36,Hemoglobin
+37,Hydrogen cyanide
+38,Keratin
+39,Lithium oxide
+40,Plasma
+41,Sulfuric acid
+42,Titanium oxide
+43,Unobtainium
