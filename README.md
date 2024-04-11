@@ -1,12 +1,16 @@
 # Atlas Galactic Resource Market API
 
-This API serves as the backend for the Atlas Galactic Resource Market
+The Atlas Galactic Resource Market project is designed to help users manage the resources across different planetary systems in the galaxy. It features a backend API for resource management and a frontend interface for users to view and explore available resources in the galaxy.
 
 ## Technologies Used
 
+- **Python 3**: Programming language used for the API logic
 - **Flask**: Lightweight web framework for building the API
 - **PostgreSQL**: Database management system for storing data
-- **Python 3**: Programming language used for the API logic
+- **psycopg2**: A PostgreSQL adapter for Python used to interact with the PostgreSQL database from the Flask application.
+- **Flask-RESTful**: An extension for Flask that adds support for quickly building REST APIs.
+- **unittest**: The built-in Python unit testing framework used to test the API endpoints.
+- **Flask-Testing**: An extension for Flask that provides utilities for testing Flask applications.
 
 ## Installation
 
@@ -20,10 +24,30 @@ This API serves as the backend for the Atlas Galactic Resource Market
    ```bash
     pip install -r requirements.txt
 
-3. Run app.py:
+3. Set up PostgreSQL database and confirgure connection in `app.py`.
+
+4. Run app.py in root directory:
 
    ```bash
-   python3 app.py
+   flask run
+
+5. Access the API at `http://localhost:5000/`
+
+## API Endpoints
+
+- `GET /`: Landing page.
+- `GET /planets`: List all planets and their systems.
+- `GET /systems`: List all systems.
+- `GET /resources`: List all resources.
+- `GET /<anything>`: Get info about a specified system, resource, or planet.
+- `GET /planet_resources`: List all planets and their resources.
+- `GET /planets/<resource_type>`: List all planets with a specified resource.
+- `GET /<system_name>/planets`: List all planets within a specified system.
+- `GET /<planet_name>/system`: Get the system that a specified planet is in.
+- `GET /<system_name>/planets/<resource_type>`: List all planets in a system with a specified resource.
+- `GET /<planet_name>/resources`: List all resources on a specified planet.
+- `GET /<system_name>/<planet_name>/resources`: List all resources on a planet within a specified system.
+- `GET /<system_name>/<planet_or_resource>`: List planets or resources within a specified system.
 
 ## Authors
 
