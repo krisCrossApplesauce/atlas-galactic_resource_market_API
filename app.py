@@ -1,17 +1,26 @@
+import logging
 from flask import Flask, jsonify, render_template
 import psycopg2
 
 app = Flask(__name__)
 
+# Configure logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
 # Connect to the PostgreSQL database
-conn = psycopg2.connect(
-    dbname="galactic_db",
-    user="postgres",
-    password="password",
-    host="localhost",
-    port="5432"
-)
-cur = conn.cursor()
+try:
+    conn = psycopg2.connect(
+        dbname="galactic_db",
+        user="postgres",
+        password="password",
+        host="localhost",
+        port="5432"
+    )
+    cur = conn.cursor()
+except Exception as e:
+    logging.error(f"Error connecting to database: {e}")
+    exit(1)
 
 # default page
 @app.route('/', strict_slashes=False)
