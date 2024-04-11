@@ -31,13 +31,13 @@
         .text-container {
           position: absolute;
           top: 50%; /* Center vertically */
-          left: 50%; /* Center horizontally */
+          left: 45.5%; /* Center horizontally */
           transform: translate(-50%, -50%); /* Adjust for the container's own dimensions */
-          width: 75%; /* Adjust as needed */
-          height: 75%; /* Adjust as needed */
+          width: calc(110% / 1.75); /* Adjust as needed */
+          /* height: calc(110% / 1.2); Adjust as needed */
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          /* justify-content: top; */
           align-items: center;
           z-index: 2; /* Text above rocket */
         }
@@ -45,7 +45,7 @@
           color: #03A062;
           font-family: "CustomFont", pixel;
           /* font-size: 1.7rem; */
-          font-size: 25px;
+          font-size: 20px;
         }
         .rocket-image {
           position: absolute;
@@ -76,6 +76,7 @@
           to { background-position: 100% 0%; }
         }
     </style>
+    <script src="temp_name.js"></script>
   </head>
   <body>
     <div class="container">
@@ -83,7 +84,7 @@
       <div class="fire-animation"></div>
       <div class="text-container">
         <h1>Welcome to the Galactic Resource Market</h1>
-        <p>Explore the vast universe and discover valuable resources!</p>
+        <h1>Explore the vast universe and discover valuable resources!</h1>
       </div>
     </div>
   </body>
