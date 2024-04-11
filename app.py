@@ -51,8 +51,9 @@ def get_resources():
 # lists info about any specified system, resource, or planet
 @app.route('/<anything>', methods=['GET'], strict_slashes=False)
 def get_info_of_anything_specified(anything):
-    if anything == "guk":
+    if anything.lower() == "guk":
         anything = "gük"
+    anything = anything.replace("_", " ")
     cur.execute("""
         SELECT planets.name 
         FROM planets 
@@ -102,6 +103,7 @@ def get_planet_resources():
 # lists all planets that have a specified resource
 @app.route('/planets/<resource_type>', methods=['GET'], strict_slashes=False)
 def get_planets_by_resource(resource_type):
+    resource_type = resource_type.replace("_", " ")
     cur.execute("""
         SELECT planets.name 
         FROM planets 
@@ -117,6 +119,7 @@ def get_planets_by_resource(resource_type):
 # lists all planets within a specified system
 @app.route('/<system_name>/planets', methods=['GET'], strict_slashes=False)
 def get_planets_in_system(system_name):
+    system_name = system_name.replace("_", " ")
     cur.execute("""
         SELECT planets.name 
         FROM planets 
@@ -131,6 +134,9 @@ def get_planets_in_system(system_name):
 # returns the system that the specified planet is in
 @app.route('/<planet_name>/system', methods=['GET'], strict_slashes=False)
 def get_system_of_planet(planet_name):
+    if planet_name.lower() == "guk":
+        planet_name = "gük"
+    planet_name = planet_name.replace("_", " ")
     cur.execute("""
         SELECT systems.name 
         FROM systems 
@@ -145,6 +151,8 @@ def get_system_of_planet(planet_name):
 # lists the planets within the specified system that contain the specified resource
 @app.route('/<system_name>/planets/<resource_type>', methods=['GET'], strict_slashes=False)
 def get_planets_in_system_by_resource(system_name, resource_type):
+    system_name = system_name.replace("_", " ")
+    resource_type = resource_type.replace("_", " ")
     cur.execute("""
         SELECT planets.name 
         FROM planets 
@@ -162,8 +170,9 @@ def get_planets_in_system_by_resource(system_name, resource_type):
 # lists the resources of a specified planet
 @app.route('/<planet_name>/resources', methods=['GET'], strict_slashes=False)
 def get_resources_on_planet(planet_name):
-    if planet_name == "guk":
+    if planet_name.lower() == "guk":
         planet_name = "gük"
+    planet_name = planet_name.replace("_", " ")
     cur.execute("""
         SELECT resources.type 
         FROM resources 
@@ -179,8 +188,10 @@ def get_resources_on_planet(planet_name):
 # lists the resources of a specified planet within a specified system
 @app.route('/<system_name>/<planet_name>/resources', methods=['GET'], strict_slashes=False)
 def get_resources_on_planet_in_system(system_name, planet_name):
-    if planet_name == "guk":
+    if planet_name.lower() == "guk":
         planet_name = "gük"
+    planet_name = planet_name.replace("_", " ")
+    system_name = system_name.replace("_", " ")
     cur.execute("""
         SELECT resources.type 
         FROM resources 
@@ -213,6 +224,8 @@ def get_resources_on_planet_in_system(system_name, planet_name):
 def get_planets_or_resource_in_system(system_name, planet_or_resource):
     if planet_or_resource == "guk":
         planet_or_resource = "gük"
+    system_name = system_name.replace("_", " ")
+    planet_or_resource = planet_or_resource.replace("_", " ")
     cur.execute("""
         SELECT planets.name 
         FROM planets 
