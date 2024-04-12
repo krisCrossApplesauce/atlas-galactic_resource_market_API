@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "CustomFont";
+  src: url("../assets/font/Quinquefive-ALoRM.ttf");
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  background-image: url("../assets/imgs/pixel-art-galaxy.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+.container {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-container {
+  display: block; 
+  overflow-y: scroll;
+
+  position: absolute;
+  top: 50.2%; /* Center vertically */
+  left: 45.7%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for the container's own dimensions */
+  /* width: calc(110% / 1.75); Adjust as needed */
+  /* height: calc(110% / 1.2); Adjust as needed */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: top; */
+  align-items: center;
+  z-index: 2; /* Text above rocket */
+}
+h1, p {
+  color: #03A062;
+  font-family: "CustomFont", pixel;
+  /* font-size: 1.7rem; */
+  font-size: 20px;
+}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: rgba(50, 50, 50, 0.5); }
+::-webkit-scrollbar-thumb { background: rgba(192, 49, 46, 0.5); }
+::-webkit-scrollbar-thumb:hover { background: rgba(192, 49, 46, 0.7); }
+.rocket-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* rocket behind text */
+  width: 110%; /* Editable */
+  height: auto; /* Editable */
+  object-fit: contain;
+}
+.fire-animation {
+  position: absolute;
+  transform: translateX(-75%) rotate(270deg);
+  width: 80%;
+  height: 30%;
+  background: url('../assets/sprites/burning_loop_1.png') no-repeat;
+  background-size: 800% 100%;
+  background-position: 0% 0%;
+  animation-name: animateFire;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(7);
+  animation-iteration-count: infinite;
+  z-index: -2;
+}
+@keyframes animateFire {
+  from { background-position: 0% 0%; }
+  to { background-position: 100% 0%; }
+}
+@media screen and (max-width: 700px) {
+  h1, p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 400px) {
+  h1, p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 305px) {
+  h1, p {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 225px) {
+  h1, p {
+    font-size: 5px;
+  }
+}
