@@ -29,14 +29,17 @@
           align-items: center;
         }
         .text-container {
+          display: block; 
+          overflow-y: scroll;
+
           position: absolute;
-          top: 50%; /* Center vertically */
-          left: 45.5%; /* Center horizontally */
+          top: 50.2%; /* Center vertically */
+          left: 45.7%; /* Center horizontally */
           transform: translate(-50%, -50%); /* Adjust for the container's own dimensions */
-          width: calc(110% / 1.75); /* Adjust as needed */
+          /* width: calc(110% / 1.75); Adjust as needed */
           /* height: calc(110% / 1.2); Adjust as needed */
-          display: flex;
-          flex-direction: column;
+          /* display: flex; */
+          /* flex-direction: column; */
           /* justify-content: top; */
           align-items: center;
           z-index: 2; /* Text above rocket */
@@ -47,6 +50,10 @@
           /* font-size: 1.7rem; */
           font-size: 20px;
         }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: rgba(50, 50, 50, 0.5); }
+        ::-webkit-scrollbar-thumb { background: rgba(192, 49, 46, 0.5); }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(192, 49, 46, 0.7); }
         .rocket-image {
           position: absolute;
           top: 50%;
@@ -75,8 +82,29 @@
           from { background-position: 0% 0%; }
           to { background-position: 100% 0%; }
         }
+        @media screen and (max-width: 700px) {
+          h1, p {
+            font-size: 15px;
+          }
+        }
+        @media screen and (max-width: 400px) {
+          h1, p {
+            font-size: 12px;
+          }
+        }
+        @media screen and (max-width: 305px) {
+          h1, p {
+            font-size: 8px;
+          }
+        }
+        @media screen and (max-width: 225px) {
+          h1, p {
+            font-size: 5px;
+          }
+        }
     </style>
-    <script src="temp_name.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../assets/temp_name.js"></script>
   </head>
   <body>
     <div class="container">
