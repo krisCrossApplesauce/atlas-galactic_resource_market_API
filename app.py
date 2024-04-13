@@ -2,7 +2,7 @@ import logging
 from flask import Flask, jsonify, render_template
 import psycopg2
 
-app = Flask(__name__, static_folder='assets')
+app = Flask(__name__)
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG,

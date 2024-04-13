@@ -27,7 +27,7 @@ body {
   overflow-y: scroll;
 
   position: absolute;
-  top: 50.2%; /* Center vertically */
+  top: 50.9%; /* Center vertically */
   left: 45.7%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust for the container's own dimensions */
   /* width: calc(110% / 1.75); Adjust as needed */
@@ -76,23 +76,34 @@ h1, p {
   from { background-position: 0% 0%; }
   to { background-position: 100% 0%; }
 }
-@media screen and (max-width: 700px) {
-  h1, p {
-    font-size: 15px;
+@media screen and (min-width: 1000px) {
+  .text-container {
+    top: 50.9%;
   }
+}
+@media screen and (max-width: 900px) {
+  .text-container {
+    top: 50.8%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .text-container {
+    top: 50.6%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .text-container { top: 50.6%; }
+  h1, p { font-size: 15px; }
 }
 @media screen and (max-width: 400px) {
-  h1, p {
-    font-size: 12px;
-  }
+  .text-container { top: 50.6%; }
+  h1, p { font-size: 12px; }
 }
 @media screen and (max-width: 305px) {
-  h1, p {
-    font-size: 8px;
-  }
+  .text-container { top: 50.6%; }
+  h1, p { font-size: 8px; }
 }
 @media screen and (max-width: 225px) {
-  h1, p {
-    font-size: 5px;
-  }
+  .text-container { top: 50.2%; }
+  h1, p { font-size: 5px; }
 }
