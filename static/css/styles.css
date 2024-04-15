@@ -1,6 +1,6 @@
 @font-face {
   font-family: "CustomFont";
-  src: url("../assets/font/Quinquefive-ALoRM.ttf");
+  src: url("../font/Quinquefive-ALoRM.ttf");
 }
 body {
   display: flex;
@@ -8,7 +8,7 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #000;
-  background-image: url("../assets/imgs/pixel-art-galaxy.png");
+  background-image: url("../imgs/pixel-art-galaxy.png");
   background-size: cover;
   background-position: center;
   overflow: hidden;
