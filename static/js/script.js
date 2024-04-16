@@ -16,3 +16,20 @@ $(function () {
 
 window.addEventListener('resize', setTextContainerHeight);
 
+// Get the dropdown element
+const dropdown = document.getElementById('dropdownMenuButton');
+
+// Get the paragraph element to display selected value
+const selectedValue = document.getElementById('selectedValue');
+
+// Function to handle dropdown change
+function handleDropdownChange() {
+  const selectedOption = dropdown.value;
+  selectedValue.textContent = `Selected Value: ${selectedOption}`;
+}
+
+// Add event listener for dropdown change
+dropdown.addEventListener('change', handleDropdownChange);
+
+// Initialize selected value
+handleDropdownChange();
