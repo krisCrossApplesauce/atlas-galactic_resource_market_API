@@ -17,16 +17,18 @@ function setTextContainerHeight() {
 
 // Function to fetch and populate data in text-container based on type (systems, planets, resources)
 function fetchAndPopulateData(type) {
-    $.get(`/data/${type}`)
+    // Clear the text container
+    $(".text-container").empty();
+
+    $.get(`/${type}`)
     .done(function(data) {
-        let text = `Welcome to the Galactic Resource Market - ${type.toUpperCase()} Data: ${data}`;
+        let text = `${type.toUpperCase()} Data: ${data}`;
         $(".text-container").html(`<p>${text}</p>`);
     })
     .fail(function() {
         $(".text-container").html("<p>Error, cannot load data</p>");
     });
 }
-
 // Set initial sizes on page load
 $(function () {
     setTextContainerHeight();
