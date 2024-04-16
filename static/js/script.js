@@ -40,18 +40,33 @@ function fetchAndPopulateData(type) {
 }
 
 function fetchSelectedData(type, selectedResult) {
+    // Check if selectedResult contains a comma
+    if (selectedResult.includes(',')) {
+        // Split the string at the comma and take the first part
+        selectedResult = selectedResult.split(',')[0].trim();
+    }
+
     $.get(`/${selectedResult}`)
-    .done(function(data) {
-        let text = `Selected ${type.toUpperCase()}: ${selectedResult}<br>`;
-        text += `${type.toUpperCase()} Data:<br>`;
-        data.forEach(result => {
-            text += `${result}<br>`;
+        .done(function(data) {
+            let text = `Selected ${type.toUpperCase()}: ${selectedResult}<br>`;
+            text += `${type.toUpperCase()} Data: `;
+            data.forEach(result => {
+                console.log(result);
+                let rString = `${result}`
+                if (rString.includes(',')) {
+                    // Split the string at the comma and take the first part
+                    result.forEach(resultFromList => {
+                        text += `${resultFromList}<br>`;
+                    });
+                } else {
+                    text += `${result}<br>`;
+                }
+            });
+            $(".text-container").html(`<p>${text}</p>`);
+        })
+        .fail(function() {
+            $(".text-container").html("<p>Error, cannot load data</p>");
         });
-        $(".text-container").html(`<p>${text}</p>`);
-    })
-    .fail(function() {
-        $(".text-container").html("<p>Error, cannot load data</p>");
-    });
 }
 
 // Set initial sizes on page load
