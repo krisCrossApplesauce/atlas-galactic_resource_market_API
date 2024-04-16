@@ -24,6 +24,27 @@ function fetchAndPopulateData(type) {
     .done(function(data) {
         let text = `${type.toUpperCase()} Data:<br>`;
         data.forEach(result => {
+            text += `<span class="result">${result}</span><br>`;
+        });
+        $(".text-container").html(`<p>${text}</p>`);
+
+        // Click event listener for result elements
+        $(".result").click(function() {
+            let selectedResult = $(this).text();
+            fetchSelectedData(type, selectedResult);
+        });
+    })
+    .fail(function() {
+        $(".text-container").html("<p>Error, cannot load data</p>");
+    });
+}
+
+function fetchSelectedData(type, selectedResult) {
+    $.get(`/${selectedResult}`)
+    .done(function(data) {
+        let text = `Selected ${type.toUpperCase()}: ${selectedResult}<br>`;
+        text += `${type.toUpperCase()} Data:<br>`;
+        data.forEach(result => {
             text += `${result}<br>`;
         });
         $(".text-container").html(`<p>${text}</p>`);
