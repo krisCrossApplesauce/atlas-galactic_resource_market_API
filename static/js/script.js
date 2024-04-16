@@ -8,6 +8,17 @@ function setTextContainerHeight() {
     // console.log("rocketWidth: " + rocketWidth + "\n");
     $(".text-container").width((rocketWidth / 1.75) + "px");
     // console.log("textWidth: " + $(".text-container").width() + "\n");
+
+
+    var rocketHeight = $(".rocket-image").height();
+    // console.log("\nrocketHeight: " + rocketHeight + "\n");
+    $(".path-container").height((rocketHeight / 2.2) + "px");
+    // console.log("textHeight: " + $(".text-container").height() + "\n");
+
+    var rocketWidth = $(".rocket-image").width();
+    // console.log("rocketWidth: " + rocketWidth + "\n");
+    $(".path-container").width((rocketWidth / 3.9) + "px");
+    // console.log("textWidth: " + $(".text-container").width() + "\n");
 }
 
 $(function () {
