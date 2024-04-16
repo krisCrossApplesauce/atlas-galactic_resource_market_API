@@ -25,7 +25,7 @@ except Exception as e:
 # default page
 @app.route('/', strict_slashes=False)
 def landing_page():
-    return render_template('landing.html')
+    return render_template('landing copy.html')
 
 # lists planets and their system
 @app.route('/planets', strict_slashes=False)
