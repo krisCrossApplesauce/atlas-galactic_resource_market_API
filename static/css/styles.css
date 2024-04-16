@@ -88,33 +88,55 @@ h1, p {
   .text-container {
     top: 50.9%;
   }
-  .path-container {
-    font-size: 8px;
+  .path-divs {
+    padding: 15px;
+    font-size: 4px;
   }
 }
 @media screen and (max-width: 900px) {
   .text-container {
     top: 50.8%;
   }
+  .path-divs {
+    padding: 15px;
+    font-size: 4px;
+  }
 }
 @media screen and (max-width: 800px) {
   .text-container {
     top: 50.6%;
   }
+  .path-divs {
+    padding: 10px;
+    font-size: 4px;
+  }
 }
 @media screen and (max-width: 700px) {
   .text-container { top: 50.6%; }
   h1, p { font-size: 10px; }
+  .path-divs {padding: 10px; font-size: 4px;}
 }
 @media screen and (max-width: 400px) {
   .text-container { top: 50.6%; }
   h1, p { font-size: 8px; }
+  .path-divs {
+    padding: 10rem;
+    font-size: 4px;
+  }
 }
 @media screen and (max-width: 305px) {
   .text-container { top: 50.6%; }
   h1, p { font-size: 8px; }
+  .path-divs {
+    padding: 10px;
+    font-size: 4px;
+  }
 }
 @media screen and (max-width: 225px) {
   .text-container { top: 50.2%; }
   h1, p { font-size: 5px; }
+  .path-divs {
+    padding: 10px;
+    font-size: 4px;
+  }
 }
