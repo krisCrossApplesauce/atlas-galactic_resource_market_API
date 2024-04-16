@@ -22,13 +22,17 @@ function fetchAndPopulateData(type) {
 
     $.get(`/${type}`)
     .done(function(data) {
-        let text = `${type.toUpperCase()} Data: ${data}`;
+        let text = `${type.toUpperCase()} Data:<br>`;
+        data.forEach(result => {
+            text += `${result}<br>`;
+        });
         $(".text-container").html(`<p>${text}</p>`);
     })
     .fail(function() {
         $(".text-container").html("<p>Error, cannot load data</p>");
     });
 }
+
 // Set initial sizes on page load
 $(function () {
     setTextContainerHeight();
