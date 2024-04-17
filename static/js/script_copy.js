@@ -148,12 +148,12 @@ function fetchSelectedPlanetData(type, selectedResult) {
             // Click event listener for result elements
             $(".resource_result").click(function() {
                 let selectedResult = $(this).text();
-                fetchSelectedResourceData(type, selectedResult);
+                fetchSelectedResourceData("resources", selectedResult);
             });
 
             $(".system_result").click(function() {
                 let selectedResult = $(this).text();
-                fetchSelectedData(type, selectedResult);
+                fetchSelectedData("systems", selectedResult);
             });
         })
         .fail(function() {
