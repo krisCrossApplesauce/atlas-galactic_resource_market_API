@@ -31,9 +31,11 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-/* .path-button {
-  margin: 0px, 15px;
-} */
+.path-button {
+  padding: 0.3em;
+  border-style: outset;
+  border-color: grey;
+}
 .text-container {
   display: block; 
   overflow-y: scroll;
@@ -51,15 +53,35 @@ body {
   z-index: 2; /* Text above rocket */
 }
 h1, p {
-  color: #03A062;
+  /* color: #03A062; */
   font-family: "CustomFont", pixel;
   /* font-size: 1.7rem; */
   font-size: 20px;
 }
+.green { color: #03A062; }
+.green:hover { color: #00a621 /* #007a5a */; }
+/* .red { color: #a00303; }
+.red:hover { color: #801713; } */
+.blue { color: #6770F0 /* #7D83FF */; }
+.blue:hover { color: #3f13ed /* #6603A0 */; }
+.grey { color: #a1a1a1; }
+.grey:hover { color: #707070 /* #4a4a4a */; }
+.orange { color: #F58A07; }
+.orange:hover { color: #FB5607; }
+.purple { color: #b244f2 /* #a738e8 /* #9a33d6 #8f30c7 */; }
+.purple:hover { color: #c100d4 /* #a700bd /* #c700a6 /* #c900b9 /* #bf00b9 /* #a000a8 */; }
+/* .purple { color: #ad0597; }
+.purple:hover { color: #8A049C; }
+.purple { color: #91047E; }
+.purple:hover { color: #9A0061; } */
+
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: rgba(50, 50, 50, 0.5); }
 ::-webkit-scrollbar-thumb { background: rgba(192, 49, 46, 0.5); }
-::-webkit-scrollbar-thumb:hover { background: rgba(192, 49, 46, 0.7); }
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(192, 49, 46, 0.7);
+  /* background: #801713; */
+}
 .rocket-image {
   position: absolute;
   top: 50%;
