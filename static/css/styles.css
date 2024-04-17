@@ -23,13 +23,17 @@ body {
   align-items: center;
 }
 .path-container {
-  transform: translate(-75%, -50%);
+  left: 45.7%; /* Center horizontally */
+  transform: translate(-50%, -50%);
   display: flex;
   position: absolute;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+/* .path-button {
+  margin: 0px, 15px;
+} */
 .text-container {
   display: block; 
   overflow-y: scroll;
@@ -64,7 +68,7 @@ h1, p {
   z-index: -1; /* rocket behind text */
   width: 110%; /* Editable */
   height: auto; /* Editable */
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 .fire-animation {
   position: absolute;
@@ -84,59 +88,51 @@ h1, p {
   from { background-position: 0% 0%; }
   to { background-position: 100% 0%; }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 991px) {
   .text-container {
     top: 50.9%;
   }
-  .path-divs {
-    padding: 15px;
-    font-size: 4px;
+  .path-button { font-size: 20px; }
+}
+@media screen and (max-width: 991px) {
+  .text-container {
+    top: 50.8%;
   }
+  .path-button { font-size: 15px; }
 }
 @media screen and (max-width: 900px) {
   .text-container {
     top: 50.8%;
   }
-  .path-divs {
-    padding: 15px;
-    font-size: 4px;
-  }
+  .path-button { font-size: 15px; }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 770px) {
   .text-container {
     top: 50.6%;
   }
-  .path-divs {
-    padding: 10px;
-    font-size: 4px;
-  }
+  h1, p { font-size: 15px; }
+  .path-button { font-size: 11px; }
 }
 @media screen and (max-width: 700px) {
   .text-container { top: 50.6%; }
-  h1, p { font-size: 10px; }
-  .path-divs {padding: 10px; font-size: 4px;}
+  h1, p { font-size: 13px; }
+  .path-button { font-size: 10px; }
+}
+@media screen and (max-width: 480px) {
+  .path-button { font-size: 9px; }
 }
 @media screen and (max-width: 400px) {
   .text-container { top: 50.6%; }
   h1, p { font-size: 8px; }
-  .path-divs {
-    padding: 10rem;
-    font-size: 4px;
-  }
+  .path-button { font-size: 7px; }
 }
 @media screen and (max-width: 305px) {
   .text-container { top: 50.6%; }
   h1, p { font-size: 8px; }
-  .path-divs {
-    padding: 10px;
-    font-size: 4px;
-  }
+  .path-button { font-size: 6px; }
 }
 @media screen and (max-width: 225px) {
   .text-container { top: 50.2%; }
   h1, p { font-size: 5px; }
-  .path-divs {
-    padding: 10px;
-    font-size: 4px;
-  }
+  .path-button { font-size: 4px; }
 }

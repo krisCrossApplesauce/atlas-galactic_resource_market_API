@@ -9,10 +9,14 @@ function setTextContainerHeight() {
     $(".text-container").width((rocketWidth / 1.75) + "px");
 
     // Set path-container height
-    $(".path-container").height((rocketHeight / 2.2) + "px");
+    if (rocketHeight < 450) {
+        $(".path-container").height((rocketHeight / 2.3) + "px");
+    } else {
+        $(".path-container").height((rocketHeight / 2.2) + "px");
+    }
 
     // Set path-container width
-    $(".path-container").width((rocketWidth / 3.9) + "px");
+    $(".path-container").width((rocketWidth / 1.75) + "px");
 }
 
 // Function to fetch and populate data in text-container based on type (systems, planets, resources)
