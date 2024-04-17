@@ -22,7 +22,7 @@ function fetchAndPopulateData(type) {
 
     $.get(`/${type}`)
     .done(function(data) {
-        let text = `${type.toUpperCase()} Data:<br>`;
+        let text = `[${type.toUpperCase()} Data]<br>`;
         data.forEach(result => {
             text += `<span class="result">${result}</span><br>`;
         });
@@ -39,6 +39,7 @@ function fetchAndPopulateData(type) {
             }
             if (type == "planets") {
                 console.log('planets button calls fetchAndPopulateData function instead of its own fetchAndPopulatePlanetsData function');
+                fetchSelectedPlanetData(type, selectedResult);
             }
         });
     })
@@ -53,7 +54,7 @@ function fetchAndPopulatePlanetsData() {
 
     $.get(`/planets`)
     .done(function(data) {
-        let text = `Planets Data:<br>`;
+        let text = `[Planets Data]<br>`;
         let systems = [];
         data.forEach(result => {
             if (!systems.includes(result[1])) {
@@ -90,8 +91,8 @@ function fetchSelectedData(type, selectedResult) {
     } else {
         $.get(`/${selectedResult}`)
             .done(function(data) {
-                let text = `Selected ${type.toUpperCase()}: ${selectedResult}<br>`;
-                text += `${type.toUpperCase()} Data:<br>`;
+                let text = `Selected Star: ${selectedResult}<br>`;
+                text += `[${selectedResult.toUpperCase()} System Data]<br>`;
                 data.forEach(result => {
                     text += `${result}<br>`;
                 });
@@ -103,7 +104,7 @@ function fetchSelectedData(type, selectedResult) {
     }
 }
 
-function fetchPlanetData(type, selectedResult) {
+function fetchSelectedPlanetData(type, selectedResult) {
     // Check if selectedResult contains a comma
     if (selectedResult.includes(',')) {
         // Split the string at the comma and take the first part
@@ -112,16 +113,18 @@ function fetchPlanetData(type, selectedResult) {
 
     $.get(`/${selectedResult}`)
         .done(function(data) {
-            let text = `Selected ${type.toUpperCase()}: ${selectedResult}<br>`;
-            text += `${type.toUpperCase()} Data:<br>`;
+            let text = `Selected Planet: ${selectedResult}<br>`;
+            text += `[${selectedResult.toUpperCase()} Data]<br>`;
+            let i = 0;
             data.forEach(result => {
                 let rString = `${result}`
-                if (rString.includes(',')) {
+                if (rString.includes(',') || i > 0) {
                     result.forEach(resultFromList => {
                         text += `${resultFromList}<br>`;
                     });
                 } else {
                     text += `System: ${result}<br>Resources:<br>`;
+                    i += 1;
                 }
             });
             $(".text-container").html(`<p>${text}</p>`);
@@ -131,7 +134,7 @@ function fetchPlanetData(type, selectedResult) {
         });
 }
 
-function fetchResourceData(type, selectedResult) {
+function fetchSelectedResourceData(type, selectedResult) {
     // Check if selectedResult contains a comma
     if (selectedResult.includes(',')) {
         // Split the string at the comma and take the first part
@@ -140,18 +143,16 @@ function fetchResourceData(type, selectedResult) {
 
     $.get(`/${selectedResult}`)
         .done(function(data) {
-            let text = `Selected ${type.toUpperCase()}: ${selectedResult}<br>`;
-            text += `${type.toUpperCase()} Data:<br>`;
+            let text = `Selected Resource: ${selectedResult}<br>`;
+            text += `[${selectedResult.toUpperCase()} Data]<br>`;
+            let systems = [];
             data.forEach(result => {
-                let systems = [];
-                result.forEach(resultFromList => {
-                    if (!systems.includes(resultFromList[1])) {
-                        systems.push(resultFromList[1]);
-                        if (systems.length != 1) { text += `<br>`; }
-                        text += `${resultFromList[1]} System:<br>`;
-                    }
-                    text += `${resultFromList[0]}<br>`;
-                });
+                if (!systems.includes(result[1])) {
+                    systems.push(result[1]);
+                    if (systems.length != 1) { text += `<br>`; }
+                    text += `${result[1]} System:<br>`;
+                }
+                text += `${result[0]}<br>`;
             });
             $(".text-container").html(`<p>${text}</p>`);
         })
