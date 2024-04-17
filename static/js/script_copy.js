@@ -101,12 +101,18 @@ function fetchSelectedData(type, selectedResult) {
     } else {
         $.get(`/${selectedResult}`)
             .done(function(data) {
-                let text = `Selected Star: ${selectedResult}<br>`;
+                let text = `<span class="orange">Selected Star:</span> <span class="orange2">${selectedResult}</span><br>`;
                 text += `[${selectedResult.toUpperCase()} System Data]<br>`;
                 data.forEach(result => {
-                    text += `${result}<br>`;
+                    text += `<span class="planets_result blue_hoverable">${result}</span><br>`;
                 });
                 $(".text-container").html(`<p>${text}</p>`);
+
+                // Click event listener for result elements
+                $(".planets_result").click(function() {
+                    let selectedResult = $(this).text();
+                    fetchSelectedPlanetData("planets", selectedResult);
+                });
             })
             .fail(function() {
                 $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
@@ -123,21 +129,32 @@ function fetchSelectedPlanetData(type, selectedResult) {
 
     $.get(`/${selectedResult}`)
         .done(function(data) {
-            let text = `Selected Planet: ${selectedResult}<br>`;
+            let text = `<span class="blue">Selected Planet:</span> <span class="blue2">${selectedResult}</span><br>`;
             text += `[${selectedResult.toUpperCase()} Data]<br>`;
             let i = 0;
             data.forEach(result => {
                 let rString = `${result}`
                 if (rString.includes(',') || i > 0) {
                     result.forEach(resultFromList => {
-                        text += `${resultFromList}<br>`;
+                        text += `<span class="resource_result purple_hoverable">${resultFromList}</span><br>`;
                     });
                 } else {
-                    text += `System: ${result}<br>Resources:<br>`;
+                    text += `<span class="orange2">System:</span> <span class="system_result orange_hoverable">${result}</span><br><span class="purple2">Resources:</span><br>`;
                     i += 1;
                 }
             });
             $(".text-container").html(`<p>${text}</p>`);
+
+            // Click event listener for result elements
+            $(".resource_result").click(function() {
+                let selectedResult = $(this).text();
+                fetchSelectedResourceData(type, selectedResult);
+            });
+
+            $(".system_result").click(function() {
+                let selectedResult = $(this).text();
+                fetchSelectedData(type, selectedResult);
+            });
         })
         .fail(function() {
             $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
@@ -153,18 +170,24 @@ function fetchSelectedResourceData(type, selectedResult) {
 
     $.get(`/${selectedResult}`)
         .done(function(data) {
-            let text = `Selected Resource: ${selectedResult}<br>`;
+            let text = `<span class="purple">Selected Resource:</span> <span class="purple2">${selectedResult}</span><br>`;
             text += `[${selectedResult.toUpperCase()} Data]<br>`;
             let systems = [];
             data.forEach(result => {
                 if (!systems.includes(result[1])) {
                     systems.push(result[1]);
                     if (systems.length != 1) { text += `<br>`; }
-                    text += `${result[1]} System:<br>`;
+                    text += `<span class="orange">${result[1]} System:</span><br>`;
                 }
-                text += `${result[0]}<br>`;
+                text += `<span class="planets_result blue_hoverable">${result[0]}</span><br>`;
             });
             $(".text-container").html(`<p>${text}</p>`);
+
+            // Click event listener for result elements
+            $(".planets_result").click(function() {
+                let selectedResult = $(this).text();
+                fetchSelectedPlanetData("planets", selectedResult);
+            });
         })
         .fail(function() {
             $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
