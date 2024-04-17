@@ -27,8 +27,11 @@ function fetchAndPopulateData(type) {
     $.get(`/${type}`)
     .done(function(data) {
         let text = `[${type.toUpperCase()} Data]<br>`;
+        let color = ""
+        if (type == "resources") { color = "purple_hoverable"; }
+        if (type == "systems") { color = "orange_hoverable"; }
         data.forEach(result => {
-            text += `<span class="result">${result}</span><br>`;
+            text += `<span class="result ${color}">${result}</span><br>`;
         });
         $(".text-container").html(`<p>${text}</p>`);
 
@@ -48,7 +51,7 @@ function fetchAndPopulateData(type) {
         });
     })
     .fail(function() {
-        $(".text-container").html("<p>Error, cannot load data</p>");
+        $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
     });
 }
 
@@ -60,13 +63,16 @@ function fetchAndPopulatePlanetsData() {
     .done(function(data) {
         let text = `[Planets Data]<br>`;
         let systems = [];
+        let colors = ["green", "blue", "orange", "purple", "grey"];
+        let i = 0;
         data.forEach(result => {
             if (!systems.includes(result[1])) {
+                // if (i == 4) { i = 0; } else { i += 1; }
                 systems.push(result[1]);
-                if (systems.length != 1) { text += `<br>`; }
-                text += `<span>${result[1]} System:</span><br>`;
+                // if (systems.length != 1) { text += `<br>`; }
+                text += `<span class="orange">${result[1]} System:</span><br>`;
             }
-            text += `<span class="planets_result">${result[0]}</span><br>`;
+            text += `<span class="planets_result blue_hoverable">${result[0]}</span><br>`;
         });
         $(".text-container").html(`<p>${text}</p>`);
 
@@ -77,7 +83,7 @@ function fetchAndPopulatePlanetsData() {
         });
     })
     .fail(function() {
-        $(".text-container").html("<p>Error, cannot load data</p>");
+        $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
     });
 }
 
@@ -103,7 +109,7 @@ function fetchSelectedData(type, selectedResult) {
                 $(".text-container").html(`<p>${text}</p>`);
             })
             .fail(function() {
-                $(".text-container").html("<p>Error, cannot load data</p>");
+                $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
             });
     }
 }
@@ -134,7 +140,7 @@ function fetchSelectedPlanetData(type, selectedResult) {
             $(".text-container").html(`<p>${text}</p>`);
         })
         .fail(function() {
-            $(".text-container").html("<p>Error, cannot load data</p>");
+            $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
         });
 }
 
@@ -161,7 +167,7 @@ function fetchSelectedResourceData(type, selectedResult) {
             $(".text-container").html(`<p>${text}</p>`);
         })
         .fail(function() {
-            $(".text-container").html("<p>Error, cannot load data</p>");
+            $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
         });
 }
 

@@ -37,6 +37,7 @@ body {
   border-color: grey;
 }
 .text-container {
+  color: #03A062;
   display: block; 
   overflow-y: scroll;
 
@@ -58,18 +59,18 @@ h1, p {
   /* font-size: 1.7rem; */
   font-size: 20px;
 }
-.green { color: #03A062; }
-.green:hover { color: #00a621 /* #007a5a */; }
-/* .red { color: #a00303; }
-.red:hover { color: #801713; } */
-.blue { color: #6770F0 /* #7D83FF */; }
-.blue:hover { color: #3f13ed /* #6603A0 */; }
-.grey { color: #a1a1a1; }
-.grey:hover { color: #707070 /* #4a4a4a */; }
-.orange { color: #F58A07; }
-.orange:hover { color: #FB5607; }
-.purple { color: #b244f2 /* #a738e8 /* #9a33d6 #8f30c7 */; }
-.purple:hover { color: #c100d4 /* #a700bd /* #c700a6 /* #c900b9 /* #bf00b9 /* #a000a8 */; }
+.green, .green_hoverable { color: #03A062; }
+.green2, .green_hoverable:hover { color: #00a621 /* #007a5a */; }
+.red { color: #a00303; }
+.red:hover { color: #801713; }
+.blue, .blue_hoverable { color: #6770F0 /* #7D83FF */; }
+.blue2, .blue_hoverable:hover { color: #3f13ed /* #6603A0 */; }
+.grey, .grey_hoverable { color: #a1a1a1; }
+.grey2, .grey_hoverable:hover { color: #707070 /* #4a4a4a */; }
+.orange, .orange_hoverable { color: #F58A07; }
+.orange2, .orange_hoverable:hover { color: #FB5607; }
+.purple, .purple_hoverable { color: #b244f2 /* #a738e8 /* #9a33d6 #8f30c7 */; }
+.purple2, .purple_hoverable:hover { color: #c100d4 /* #a700bd /* #c700a6 /* #c900b9 /* #bf00b9 /* #a000a8 */; }
 /* .purple { color: #ad0597; }
 .purple:hover { color: #8A049C; }
 .purple { color: #91047E; }
