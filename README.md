@@ -12,6 +12,9 @@ The Atlas Galactic Resource Market project is designed to help users manage the 
 - **unittest**: The built-in Python unit testing framework used to test the API endpoints.
 - **Flask-Testing**: An extension for Flask that provides utilities for testing Flask applications.
 
+## API Diagram
+![image](https://github.com/krisCrossApplesauce/atlas-galactic_resource_market_API/assets/115739693/23dd8b7c-a49f-4b38-b852-78dc8bdec938)
+
 ## Installation
 
 1. Clone repository:
