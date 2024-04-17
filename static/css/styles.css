@@ -8,11 +8,22 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #000;
-  background-image: url("../imgs/pixel-art-galaxy.png");
-  background-size: cover;
-  background-position: center;
+  background-image: url("../imgs/pixel-art-galaxy.png"), url("../imgs/pixel-art-galaxy.png"); /* Duplicate image */
+  background-size: 100% auto;
+  background-position: 0 0;
   overflow: hidden;
   position: relative;
+  animation: scrollBackground 30s linear infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scrollBackground {
+  0% {
+    background-position: 3840px 0; /* Start at left side */
+  }
+  100% {
+    background-position: 0 0; /* Move image by slightly more than its width */
+  }
 }
 .container {
   position: relative;
