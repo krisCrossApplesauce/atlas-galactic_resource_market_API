@@ -158,7 +158,7 @@ function fetchSelectedPlanetData(type, selectedResult) {
         })
         .fail(function() {
             if (selectedResult == "HD 189733c") {
-                $(".text-container").html(`<p class="green"><span class="green2">[Error]</span> This planet may or may not exist.</p>`);
+                $(".text-container").html(`<p class="green"><span class="green2">[Error]</span> The only thing we know about this planet is that it exists.</p>`);
             } else {
                 $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
             }
