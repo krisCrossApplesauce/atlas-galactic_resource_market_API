@@ -2,6 +2,9 @@
 
 The Atlas Galactic Resource Market project is designed to help users manage the resources across different planetary systems in the galaxy. It features a backend API for resource management and a frontend interface for users to view and explore available resources in the galaxy.
 
+## Screenshot
+![welcome_to_the_galactic_resource_market](https://github.com/krisCrossApplesauce/atlas-galactic_resource_market_API/assets/90411730/7f6e0a32-5c62-47e2-993d-f76fa35cf252)
+
 ## Technologies Used
 
 - **Python 3**: Programming language used for the API logic
