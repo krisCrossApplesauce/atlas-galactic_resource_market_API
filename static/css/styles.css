@@ -80,8 +80,9 @@ h1, p {
 .grey2, .grey_hoverable:hover { color: #707070 /* #4a4a4a */; }
 .orange, .orange_hoverable { color: #F58A07; }
 .orange2, .orange_hoverable:hover { color: #FB5607; }
-.purple, .purple_hoverable { color: #b244f2 /* #a738e8 /* #9a33d6 #8f30c7 */; }
+.purple, .purple_hoverable, .purple_button { color: #b244f2 /* #a738e8 /* #9a33d6 #8f30c7 */; }
 .purple2, .purple_hoverable:hover { color: #a300a8 /* #b500af /* #C400BD /* #c100d4 /* #a700bd /* #c700a6 /* #c900b9 /* #bf00b9 /* #a000a8 */; }
+.purple3, .purple_button:hover { color: #b000b5 /* #d000d6 /* #a300a8 /* #b500af /* #C400BD /* #c100d4 /* #a700bd /* #c700a6 /* #c900b9 /* #bf00b9 /* #a000a8 */; }
 /* .purple { color: #ad0597; }
 .purple:hover { color: #8A049C; }
 .purple { color: #91047E; }
