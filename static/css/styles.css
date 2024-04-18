@@ -34,7 +34,7 @@ body {
   align-items: center;
 }
 .path-container {
-  left: 45.7%; /* Center horizontally */
+  left: 47.5%; /* Center horizontally */
   transform: translate(-50%, -50%);
   display: flex;
   position: absolute;
@@ -124,6 +124,9 @@ h1, p {
   to { background-position: 100% 0%; }
 }
 @media screen and (min-width: 991px) {
+  .path-container {
+    left: 50;
+  }
   @keyframes scrollBackground { /*This is added because the bg gets weird at large sizes*/
     0% {
       background-position: 5750px 0;
