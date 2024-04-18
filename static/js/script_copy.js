@@ -51,7 +51,7 @@ function fetchAndPopulateData(type) {
         });
     })
     .fail(function() {
-        $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
+        $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
     });
 }
 
@@ -83,7 +83,7 @@ function fetchAndPopulatePlanetsData() {
         });
     })
     .fail(function() {
-        $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
+        $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
     });
 }
 
@@ -115,7 +115,7 @@ function fetchSelectedData(type, selectedResult) {
                 });
             })
             .fail(function() {
-                $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
+                $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
             });
     }
 }
@@ -157,7 +157,11 @@ function fetchSelectedPlanetData(type, selectedResult) {
             });
         })
         .fail(function() {
-            $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
+            if (selectedResult == "HD 189733c") {
+                $(".text-container").html(`<p class="green"><span class="green2">[Error]</span> This planet may or may not exist.</p>`);
+            } else {
+                $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
+            }
         });
 }
 
@@ -195,7 +199,11 @@ function fetchSelectedResourceData(type, selectedResult) {
             });
         })
         .fail(function() {
-            $(".text-container").html('<p class="grey2">Error, cannot load data</p>');
+            if (selectedResult == "Unobtainium") {
+                $(".text-container").html(`<p class="green"><span class="green2">[Error]</span> You can't have it.</p>`);
+            } else {
+                $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
+            }
         });
 }
 
