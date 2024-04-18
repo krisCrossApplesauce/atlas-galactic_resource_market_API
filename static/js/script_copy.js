@@ -177,7 +177,7 @@ function fetchSelectedResourceData(type, selectedResult) {
                 if (!systems.includes(result[1])) {
                     systems.push(result[1]);
                     if (systems.length != 1) { text += `<br>`; }
-                    text += `<span class="orange">${result[1]} System:</span><br>`;
+                    text += `<span class="system_result orange_hoverable">${result[1]}</span> <span class="orange">System:</span><br>`;
                 }
                 text += `<span class="planets_result blue_hoverable">${result[0]}</span><br>`;
             });
@@ -187,6 +187,11 @@ function fetchSelectedResourceData(type, selectedResult) {
             $(".planets_result").click(function() {
                 let selectedResult = $(this).text();
                 fetchSelectedPlanetData("planets", selectedResult);
+            });
+
+            $(".system_result").click(function() {
+                let selectedResult = $(this).text();
+                fetchSelectedData("systems", selectedResult);
             });
         })
         .fail(function() {
@@ -211,6 +216,11 @@ $(function () {
 
     // Event listener for Resources paragraph click
     $("#resources").click(function() {
+        fetchAndPopulateData("resources");
+    });
+
+    // Event listener for Resources paragraph click
+    $("#secret_resources").click(function() {
         fetchAndPopulateData("resources");
     });
 });
