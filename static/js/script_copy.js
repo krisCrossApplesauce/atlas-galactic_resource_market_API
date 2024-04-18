@@ -51,7 +51,7 @@ function fetchAndPopulateData(type) {
         });
     })
     .fail(function() {
-        $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
+        $(".text-container").html('<p class="grey2"><span class="grey">[Error]</span> Cannot load data.</p>');
     });
 }
 
@@ -83,7 +83,7 @@ function fetchAndPopulatePlanetsData() {
         });
     })
     .fail(function() {
-        $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
+        $(".text-container").html('<p class="grey2"><span class="grey">[Error]</span> Cannot load data.</p>');
     });
 }
 
@@ -115,7 +115,7 @@ function fetchSelectedData(type, selectedResult) {
                 });
             })
             .fail(function() {
-                $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
+                $(".text-container").html(`<p class="grey2"><span class="orange">Selected Star:</span> <span class="orange2">${selectedResult}</span><br><span class="grey">[Error]</span> Cannot load data.</p>`);
             });
     }
 }
@@ -158,9 +158,9 @@ function fetchSelectedPlanetData(type, selectedResult) {
         })
         .fail(function() {
             if (selectedResult == "HD 189733c") {
-                $(".text-container").html(`<p class="green"><span class="green2">[Error]</span> The only thing we know about this planet is that it exists.</p>`);
+                $(".text-container").html(`<p class="green"><span class="blue">Selected Planet:</span> <span class="blue2">${selectedResult}</span><br><span class="green2">[Error]</span> The only thing we know about this planet is that it exists.</p>`);
             } else {
-                $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
+                $(".text-container").html(`<p class="grey2"><span class="blue">Selected Planet:</span> <span class="blue2">${selectedResult}</span><br><span class="grey">[Error]</span> Cannot load data.</p>`);
             }
         });
 }
@@ -200,9 +200,9 @@ function fetchSelectedResourceData(type, selectedResult) {
         })
         .fail(function() {
             if (selectedResult == "Unobtainium") {
-                $(".text-container").html(`<p class="green"><span class="green2">[Error]</span> You can't have it.</p>`);
+                $(".text-container").html(`<p class="green"><span class="purple">Selected Resource:</span> <span class="purple2">${selectedResult}</span><br><span class="green2">[Error]</span> You can't have it.</p>`);
             } else {
-                $(".text-container").html('<p class="grey2">[Error] Cannot load data.</p>');
+                $(".text-container").html(`<p class="grey2"><span class="purple">Selected Resource:</span> <span class="purple2">${selectedResult}</span><br><span class="grey">[Error]</span> Cannot load data.</p>`);
             }
         });
 }
