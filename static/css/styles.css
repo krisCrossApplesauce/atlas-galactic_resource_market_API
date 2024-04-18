@@ -19,7 +19,7 @@ body {
 
 @keyframes scrollBackground {
   0% {
-    background-position: 3840px 0; /* Start at left side */
+    background-position: 5715px 0; /* Start at left side */
   }
   100% {
     background-position: 0 0; /* Move image by slightly more than its width */
@@ -124,6 +124,14 @@ h1, p {
   to { background-position: 100% 0%; }
 }
 @media screen and (min-width: 991px) {
+  @keyframes scrollBackground { /*This is added because the bg gets weird at large sizes*/
+    0% {
+      background-position: 5750px 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
   .text-container {
     top: 50.9%;
   }
